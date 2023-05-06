@@ -762,7 +762,6 @@ func (m *SessionManager) start(xConn *x.Conn, sysSignalLoop *dbusutil.SignalLoop
 	m.launchDDE()
 
 	time.AfterFunc(3*time.Second, _startManager.listenAutostartFileEvents)
-	go m.launchAutostart()
 
 	if m.loginSession != nil {
 		m.loginSession.InitSignalExt(sysSignalLoop, true)
